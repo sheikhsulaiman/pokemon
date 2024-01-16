@@ -1,7 +1,7 @@
-"use client";
-import { useEffect, useState } from "react";
 import PokeCard from "@/components/PokeCard";
-import Header from "@/components/Header";
+import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 interface Type {
   count: number;
@@ -15,44 +15,39 @@ interface Type {
   ];
 }
 
-function App() {
-  const [isMounted, setIsMounted] = useState(false);
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+async function App({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined };
+}) {
+  const url = "https://pokeapi.co/api/v2/pokemon/";
+  const { offset, limit } = searchParams;
+  const formatedUrl = url + "?offset=" + offset + "&" + "limit=" + limit;
 
-  const [fetchUrl, setFetchUrl] = useState<string>(
-    "https://pokeapi.co/api/v2/pokemon/"
-  );
-  const [isLoading, setIsLoading] = useState(false);
-  const [data, setData] = useState<Type>();
-  const leftPageHandler = () => {
-    if (data?.previous) setFetchUrl(data.previous);
-  };
-  const rightPageHandler = () => {
-    if (data?.next) setFetchUrl(data.next);
-  };
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
-      const response = await fetch(fetchUrl);
-      const rawData = await response.json();
-      setData(rawData);
-      setIsLoading(false);
-    };
-    fetchData();
-  }, [fetchUrl]);
+  const response = await fetch(formatedUrl);
+  const data: Type = await response.json();
 
-  if (!isMounted) {
-    return null;
-  }
+  const next = data.next?.split("?")[1];
+  const previous = data.previous?.split("?")[1];
+
   return (
     <main className="container min-h-screen mx-auto">
-      <Header
-        isLoading={isLoading}
-        onLeft={leftPageHandler}
-        onRight={rightPageHandler}
-      />
+      <header className="flex p-2 items-center justify-between container mx-auto mb-2 border bg-sky-200">
+        <Button>
+          <Link href={previous ? "/?" + previous : "/"}>
+            <ChevronLeft />
+          </Link>
+        </Button>
+        <Link href={"/"}>
+          <h1 className="text-2xl font-bold">Poke Info</h1>
+        </Link>
+        <Button>
+          <Link href={next ? "/?" + next : "/"}>
+            <ChevronRight />
+          </Link>
+        </Button>
+      </header>
+
       <div className="grid grid-cols-12 gap-2">
         {data &&
           data.results.map((result) => (

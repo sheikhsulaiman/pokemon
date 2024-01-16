@@ -1,7 +1,5 @@
-import { ChevronLeft } from "lucide-react";
-import Link from "next/link";
 import PokeDetails from "@/components/PokeDetails";
-// import axios from "axios";
+import BackButton from "@/components/BackButton";
 
 export interface DataType {
   number: number;
@@ -60,12 +58,7 @@ const page = async ({ params }: { params: { slug: string } }) => {
   return (
     <main className="container mx-auto">
       <div className="flex flex-col p-2 gap-2">
-        <Link href={`/`}>
-          <p className="flex items-center">
-            <ChevronLeft className="h-4 w-4" />
-            Back
-          </p>
-        </Link>
+        <BackButton />
         <PokeDetails data={data} />
       </div>
     </main>
