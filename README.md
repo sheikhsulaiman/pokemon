@@ -1,36 +1,23 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pokemon Web App
+
+Welcome to the Pokemon Web App repository! This web application allows users to explore a list of twenty Pokemon, displaying their images and titles in cards on the home page with pagination support. Users can click on a Pokemon card to be redirected to a details page that provides more information about that specific Pokemon. The details page features a back button and toggle buttons to switch between various types of the selected Pokemon.
+
+## Technologies Used
+
+- **Next.js 13**: Next.js is a React framework that enables server-side rendering and other advanced features. In this project, Next.js is utilized to enhance the performance and SEO of the web app.
+
+- **React Server Components**: Server Components in React enable efficient rendering on the server side, improving the overall performance of the application. This technology is leveraged to achieve a smooth user experience.
+
+- **Tailwind CSS**: Tailwind CSS is a utility-first CSS framework that is used to quickly design and style the user interface of the Pokemon Web App. It allows for easy customization and consistent styling across the application.
+
+- **ShadcnUI Library**: ShadcnUI Library provides additional UI components and styles to enhance the visual appeal and user experience of the web app. It adds a layer of design consistency and responsiveness to the project.
 
 ## Getting Started
 
-First, run the development server:
+Follow these steps to run the Pokemon Web App locally:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. Clone the repository to your local machine:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   ```bash
+   git clone https://github.com/sheikhsulaiman/pokemon.git
+   ```
