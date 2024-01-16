@@ -21,3 +21,17 @@ Follow these steps to run the Pokemon Web App locally:
    ```bash
    git clone https://github.com/sheikhsulaiman/pokemon.git
    ```
+
+2. Navigate to the project directory:
+   ```bash
+    cd pokemon
+   ```
+3. Run the development server:
+   ```bash
+    npm run dev
+   ```
+   The application will be accessible at http://localhost:3000.
+
+## Deployment
+
+The Pokemon Web App is deployed on Netlify, providing a live version for users to access. Visit https://next-pokemon-app.netlify.app/ to explore the deployed application.
