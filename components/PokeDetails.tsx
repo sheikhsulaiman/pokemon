@@ -31,7 +31,7 @@ const PokeDetails = ({ data }: { data: DataType[] }) => {
               {e.name}
             </Button>
           ))}
-        {!selectedPokemon.name && (
+        {selectedPokemon === undefined && (
           <div className="w-full h-full min-h-12 flex justify-center items-center">
             <h1 className="font-bold text-xl">
               Failed to fetch data, try again.
@@ -39,7 +39,7 @@ const PokeDetails = ({ data }: { data: DataType[] }) => {
           </div>
         )}
       </div>
-      {selectedPokemon.name && (
+      {selectedPokemon !== undefined && (
         <div className="flex gap-4 flex-col mt-6 md:flex-row">
           <img
             src={selectedPokemon.sprite}
@@ -117,7 +117,7 @@ const PokeDetails = ({ data }: { data: DataType[] }) => {
           </div>
         </div>
       )}
-      {selectedPokemon.training && (
+      {selectedPokemon !== undefined && selectedPokemon.training && (
         <div className="flex flex-col md:flex-row gap-2">
           <div className="border flex-1 rounded-sm p-2">
             <h1 className="font-semibold">Training</h1>
@@ -156,7 +156,7 @@ const PokeDetails = ({ data }: { data: DataType[] }) => {
           </div>
         </div>
       )}
-      {selectedPokemon.abilities && (
+      {selectedPokemon !== undefined && selectedPokemon.abilities && (
         <div className="p-2 border rounded-sm">
           <h1 className="font-bold">Abilities</h1>
           <div className="w-full grid gap-2 grid-cols-12">
