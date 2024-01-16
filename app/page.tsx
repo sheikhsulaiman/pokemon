@@ -33,19 +33,19 @@ async function App({
   return (
     <main className="container min-h-screen mx-auto">
       <header className="flex p-2 items-center justify-between container mx-auto mb-2 border bg-sky-200">
-        <Button>
-          <Link href={previous ? "/?" + previous : "/"}>
+        <Link href={previous ? "/?" + previous : "/"}>
+          <Button>
             <ChevronLeft />
-          </Link>
-        </Button>
+          </Button>
+        </Link>
         <Link href={"/"}>
           <h1 className="text-2xl font-bold">Poke Info</h1>
         </Link>
-        <Button>
-          <Link href={next ? "/?" + next : "/"}>
+        <Link href={next ? "/?" + next : "/"}>
+          <Button>
             <ChevronRight />
-          </Link>
-        </Button>
+          </Button>
+        </Link>
       </header>
 
       <div className="grid grid-cols-12 gap-2">
